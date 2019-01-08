@@ -64,6 +64,11 @@ func main() {
 		clientSecret = viper.GetString("client-secret")
 	}
 
+	fmt.Println("Open the following URL if your browser did not open automatically:")
+ 	fmt.Printf(oauthUrl, clientID)
+ 	fmt.Println()
+	fmt.Println()
+	
 	helper.LaunchBrowser(viper.GetBool("open"), oauthUrl, clientID)
 
 	reader := bufio.NewReader(os.Stdin)
